@@ -1,5 +1,5 @@
 
-This file should be viewed from [github](https://github.com/larryevolveu/reference/tree/01-getting-started). Do not view from an editor.
+This file should be viewed from [github](https://github.com/larryevolveu/reference/tree/master/01-getting-started). Do not view from an editor.
 
 This project is the "Getting Started" project for the EvovleU Full Stack Development program. It is a baseline to demonstrate:
 
@@ -16,21 +16,24 @@ See the README.md for the main repository for tool setup instructions in [github
 
 Once all the base tools are installed this is the instructions to run the first sample project.
 
-2. Install the dependencies required for the project. This command looks at the 'package.json' file and installs all of the dependencies. 
+1. Install the dependencies required for the project. This command looks at the 'package.json' file and installs all of the dependencies. You must be in the correct directory to run this.  
 ```sh
 cd reference
-npm i
-```
-3. Run the automated unit tests to ensure the code works as advertised. 
-```sh
-cd src
 cd 01-getting-started
+# Check to see if package.json is here
+# by using ls or dir
+npm i
+# over 500 packages should be installed
+```
+1. Run the automated unit tests to ensure the code works as advertised. 
+```sh
 npm test
 ```
 All the tests should run.
 
-4. Start a simple development server with live load capabilities. 
+1. Start a simple development server with live load capabilities. 
 ```sh
+cd src
 live-server
 ```
 Look through the application. Notice in the "Size" section of the web page there is some logic that, based on a number, will tell you if it is small / medium / large.
