@@ -25,13 +25,13 @@ cd 01-getting-started
 npm i
 # over 500 packages should be installed
 ```
-1. Run the automated unit tests to ensure the code works as advertised. 
+2. Run the automated unit tests to ensure the code works as advertised. 
 ```sh
 npm test
 ```
 All the tests should run.
 
-1. Start a simple development server with live load capabilities. 
+3. Start a simple development server with live load capabilities. 
 ```sh
 cd src
 live-server
