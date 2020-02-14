@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import POJO from './components/POJO';
 import FuncComp from './components/FuncComp';
 import ClassComp from './components/ClassComp';
 
-function App() {
 
-  const asdf = "What Ever";
+function App() {
+  const [newStuff, setNewStuff] = useState("wow... we");
+
+  // const asdf = "What Ever";
+  const arr = [1,2,3,5,7,8,9];
 
   // console.log("in the App");
 
@@ -17,6 +20,22 @@ function App() {
   }
 
   POJO.doSomething('$1,000,000');
+
+  const result = arr.map((r, i) => 
+    <FuncComp parm={r} key={i} func={newFunction}/>
+  );
+  // let newStuff = 'wow... we';
+
+  function onConditional(e) {
+    // setNewStuff(newStuff === 'this' ? "that" : "this");
+    if (newStuff === 'this') {
+      setNewStuff('that')
+    } else {
+      setNewStuff("this")
+    };
+    console.log("onConditional", newStuff);
+    
+  }
 
   return (
     <div className="App">
@@ -37,8 +56,11 @@ function App() {
       {POJO.getLastStuff()} <p/>
       <FuncComp parm="What Ever" func={newFunction}/> <br/>
       <ClassComp/> <p/>
+      {result} <p/>
+      {newStuff} <p/>
+      <button onClick={onConditional}>Conditional</button>
     </div>
-  );
+      );
 }
 
 export default App;
