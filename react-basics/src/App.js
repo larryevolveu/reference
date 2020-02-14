@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import POJO from './components/POJO';
+import FuncComp from './components/FuncComp';
+import ClassComp from './components/ClassComp';
 
 function App() {
 
-  const [count, setCount] = useState(0);
-  const [fName, setFName] = useState("");
-  const [lName, setLName] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [showData, setShowData] = useState("None");
+  const asdf = "What Ever";
 
-  const onMoreData = ((e) => {
-    setShowData((showData === "None") ? "Special" : "None");
-  })
+  // console.log("in the App");
 
-  const onCountClick = ((e) => {
-    setCount(count + 1)
-  })
+  function newFunction(a) {
+    console.log("I'm in newFunction at the App level");
+    console.log("and what you sent me was:", a);
+  }
 
-  const onDoStuff = ((e) => {
-    console.log(fName, lName, fullName);
-
-    // setCount(count + 1)
-  })
+  POJO.doSomething('$1,000,000');
 
   return (
     <div className="App">
@@ -37,37 +31,12 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          LeArN React
         </a>
-        <a
-          className="App-link"
-          href="##"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Enter Data
-        </a>
-        <span className="App-link" onClick={onMoreData}>More Data</span>
-
       </header>
-      <div id="importantId" className="app-data">
-        Some stuff to say.
-      ({showData})
-      </div>
-      <div>
-        <p>You clicked <span id="idCount">{count}</span> times</p>
-        <button id="idOnCount" onClick={onCountClick}>Add Counter</button> <p />
-
-        <label htmlFor="idFName">First Name</label>
-        <input id="idFName" value={fName} onChange={e => setFName(e.target.value)}/><p />
-
-        <label htmlFor="idLName">Last Name</label>
-        <input id="idLName" value={lName} onChange={e => setLName(e.target.value)}/><p />
-        <input id="idLName" /><p />
-
-        <button id="idOnDoStuff" onClick={onDoStuff}>Do Stuff</button> <p />
-        <span id="idFullName" /><p />
-      </div>
+      {POJO.getLastStuff()} <p/>
+      <FuncComp parm="What Ever" func={newFunction}/> <br/>
+      <ClassComp/> <p/>
     </div>
   );
 }
