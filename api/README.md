@@ -50,8 +50,8 @@ Now that python and pipenv are installed on your computer, you are ready to set 
 Install the packages required for the API using the following command. You must be in the correct directory for the rest of these commands to work.
 
 ```sh
-cd \code\reference\api\src          ==> Windows
-cd ~/code/reference/src/api         ==> linux / mac
+cd \code\reference\api          ==> Windows
+cd ~/code/reference/api         ==> linux / mac
 
 pipenv install
 ```
